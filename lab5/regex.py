@@ -58,5 +58,5 @@ f = open(r"C:\Users\Хима\labs\lab5\row.txt", encoding="utf8")
 cont = f.read()
 def camel_to_snake(something):
     return re.sub(r'([A-Z])', r'_\1', something).lower().lstrip('_')
-snake_case_str = camel_to_snake(cont)
-print(snake_case_str)
+snake = camel_to_snake(cont)
+print(snake)
