@@ -7,12 +7,11 @@ screen = pygame.display.set_mode((1000, 800))
 done = False
 clock = pygame.time.Clock()
 
-# Load clock background and hand images
 clock_image = pygame.image.load('C:/Users/Хима/labs/lab7/clockjpeg.jpg')
 minutes_hand_image = pygame.image.load('C:/Users/Хима/labs/lab7/rightarm.png')
 seconds_hand_image = pygame.image.load('C:/Users/Хима/labs/lab7/leftarm.png')
 
-# Set clock background position
+
 clock_rect = clock_image.get_rect(center=(500, 400))
 
 while not done:
@@ -20,15 +19,12 @@ while not done:
         if event.type == pygame.QUIT:
             done = True
     
-    # Get current system time with higher precision
     current_time = datetime.datetime.now().time()
     sec_angle = -(current_time.second * 6)
     min_angle = -((current_time.minute + current_time.second/60) * 6)
     
-    # Clear the screen
     screen.fill((255, 255, 255))
     
-    # Draw clock background
     screen.blit(clock_image, clock_rect)
     
     center_x, center_y = clock_rect.center
